@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<script> 
+	function validateForm() {
+    	var x = document.forms["myForm"]["email"].value;
+	var y = document.forms["myForm"]["confirmemail"].value;
+   	 var atpos = x.indexOf("@");
+    	var dotpos = x.lastIndexOf(".");
+    	if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;}
+	if(x.localeCompare(y)!=0){
+	alert("Both e-mail IDs are not same");
+	 return false;
+	}
+}
+</script>
+<meta charset="UTF-8">
+<title>RAECS-2015</title>
+<meta name="description" content="IEEE International Conference India Chandigarh">
+<meta name="keywords" content="uiet, pu, conference, chandigarh, engineering, technology">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+      <form name="myForm" action="action.php" enctype="multipart/form-data" onsubmit="return validateForm();" method="post">		
+		<div class="left-column">		
+		<center>PERSONAL INFORMATION</center><br><br>
+		Title: <select name="Title" >
+		<option value="Mr">Mr</option>
+		<option value="Ms">Ms</option>		
+		</select><br><br>
+		First Name: <input type="text" name="fname" placeholder="First name" required><br><br>
+		Last Name: <input type="text" name="lname" placeholder="Last name" ><br><br>
+		E-mail:<br>
+		<input type="email" name="email" placeholder="E-mail ID" required><br><br>
+		Confirm E-mail:<br>
+		<input type="email" name="confirmemail" placeholder="E-mail ID" required><br><br>
+		Password: <br>
+		(Choose a password)<br>
+		<input type="password" name="password" placeholder="password" required><br><br>
+		Mobile Number: <br>
+		(Enter 10 digit number followed by country code like +91 for INDIA)<br>
+		<input type="text" name="mobile" placeholder="+91------------------" required><br><br>
+		Affiliation:<br><textarea name="affli" rows="3" cols="30">College, University or Industry Details</textarea><br>
+		Highest Educational Qualification:<br>
+		<input type="radio" name="edu" value="UG" checked>UG
+		<input type="radio" name="edu" value="PG" >PG
+		<input type="radio" name="edu" value="Doc" >Doctorate
+		<input type="radio" name="edu" value="Pdoc" >Post Doctorate<br><br>			
+		</div>
+		<div class="right-column">		
+		<center>PAPER DETAILS</center><br><br>
+		Keywords(atleast four):<br>
+		<input type="text" name="keywords" placeholder="Keywords" required><br><br>
+		Track: <select name="track" >
+		<option value="CSE">CSE</option>
+		<option value="ECE">ECE</option>		
+		<option value="EE">EE</option>
+		<option value="MECH">MECH</option>
+		<option value="SCI">SCIENCES</option>		
+		</select><br><br>		
+		Paper Title:<input type="text" name="paptitle" placeholder="Paper title" required><br><br>			
+		Names of Authors:<br> <textarea name="names" rows="4" cols="50">Names of Authors</textarea><br><br>			
+		Paper Upload : <br>		
+		(Please upload your paper in PDF format. The paper must not contain any information about authors)<br>
+		<input type="file" name="userfile" size="40" id="paper1"><br><br>		
+		<input name="upload" type="submit">
+		</form>
+		</div>
+		
+</body>
+</html>

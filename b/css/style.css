@@ -1,0 +1,31 @@
+.left-column, .right-column{
+  float:left;
+}
+.left-column{
+	float:left;
+  	width:45%; 
+  	font-family: "Times New Roman", Times, serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #0000FF;
+	background-color: #99CCCC;
+	border: thick double #FF0000;  
+}
+.right-column{
+  	width:45%; 
+	float:right;
+  	font-family: "Times New Roman", Times, serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #0000FF;
+	background-color: #99CCCC;
+	border: thick double #FF0000;
+}
+div{
+  padding:20px;
+  border:solid 1px black;
+}

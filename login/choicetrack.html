@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RAECS-2015</title>
+<script>
+window.onload = function() {
+document.getElementById('paperid').onchange = disablefield;
+document.getElementById('res').onchange = disablefield;
+document.getElementById('all').onchange = disablefield;
+document.getElementById('result').disabled = false;
+document.getElementById('id').disabled = false;
+document.getElementById('res').checked = false;
+document.getElementById('paperid').checked = false;
+document.getElementById('dec').disabled = false;
+document.getElementById('all').checked = false;
+}
+
+function disablefield()
+{
+if (document.getElementById('paperid').checked == true ){
+document.getElementById('result').value = '';
+document.getElementById('result').disabled = true;
+document.getElementById('dec').disabled = true;
+//document.getElementById('all').checked = false;
+document.getElementById('file').disabled = true;
+document.getElementById('result').disabled = true;
+document.getElementById('id').disabled = false;
+document.getElementById('track').disabled = true;}
+
+else 
+{ if ( document.getElementById('res').checked == true ){
+document.getElementById('id').value = '';
+document.getElementById('id').disabled = true;
+document.getElementById('file').disabled =false;
+document.getElementById('dec').disabled = false;
+//document.getElementById('all').checked = false;
+document.getElementById('result').disabled = false;
+document.getElementById('track').disabled = true;}
+
+else 
+{if( document.getElementById('all').checked == true ){
+document.getElementById('result').value = '';
+document.getElementById('result').disabled = true;
+document.getElementById('dec').disabled = true;
+//document.getElementById('all').checked = false;
+document.getElementById('file').disabled = true;
+//document.getElementById('result').disabled = true;
+//document.getElementById('track').disabled = false;
+document.getElementById('id').value = '';
+document.getElementById('id').disabled = true;
+}
+}
+}
+}
+</script>
+</head>
+
+<body>
+
+<form action="afterlogin/organizer.php" method="post" name="admin" target="_blank" enctype="multipart/form-data">
+<input type="radio" name="idmethod" value="1" id="paperid"/>
+Show Paper by Paper-ID: <input name="idnumber" type="text" id="id" size="25" placeholder="Enter Paper ID"/><br/><br/>
+<input type="radio" name="idmethod" value="2" id="res"/>
+Post Result:<input name="result" type="text" id="result" size="25" placeholder="Enter Paper ID" />
+Decision: <select name="decision" id="dec">
+		<option >select</option>
+		<option value="accepted">Accepted</option>
+		<option value="revision">Accepted with minor revision</option>	
+		<option value="rejected">Rejected</option>
+		</select>
+		<input type="file" name="userfile" size="400" id="file"><br><br>
+<input type="radio" name="idmethod" value="3" id="all"/> Show all papers in the track
+<input type="hidden" name="country" value="1">
+<input type="submit" name="submit" value="Submit">
+</form>
+</body>
+</html>
